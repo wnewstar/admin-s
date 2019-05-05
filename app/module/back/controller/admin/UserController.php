@@ -26,7 +26,7 @@ class UserController extends Base
         $bean = Bean::findFirstById((int)$id);
 
         $code = empty($bean) ? 201 : 0;
-        empty($code) ? : $bean->password = null;
+        empty($code) ?: $bean->password = null;
         $text = empty($code) ? '查询成功' : '查询失败';
         
         return print(json_encode(['code' => $code, 'text' => $text, 'data' => $bean]));

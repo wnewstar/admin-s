@@ -51,12 +51,13 @@ class AuthController extends BaseController
                     'uname' => $user->username,
                     'ctime' => $user->time_create
                 ];
-                $crypt = new Crypt();
+
+                $etime = time() + 3600;
+                $encrypt = "{$user->id}|{$etime}";
                 $secrect = $this->common->secrect;
-                $encrypt = $user->id . '|' . (time() + 3600);
                 $data['auth'] = [
                     'etime' => time() + 3600,
-                    'token' => $crypt->encryptBase64($encrypt, $secrect)
+                    'token' => $this->crypt->encryptBase64($encrypt, $secrect)
                 ];
             }
         }

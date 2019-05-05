@@ -16,6 +16,6 @@ class Tree
 			}
 		}
 
-		return array_filter($list, $this->filter ? : 'boolval');
+		return array_filter($list, $this->filter ?: 'boolval');
 	}
 }

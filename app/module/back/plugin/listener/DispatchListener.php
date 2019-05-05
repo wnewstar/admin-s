@@ -37,7 +37,7 @@ class DispatchListener Extends Plugin
             'user_create' => (int)$this->user->id
         ];
 
-        $code == 0 ? : $dispatcher->forward($jump + ['action' => 'error', 'params' => ['code' => $code]]);
+        $code == 0 ?: $dispatcher->forward($jump + ['action' => 'error', 'params' => ['code' => $code]]);
 
         $this->getDI()->get('dblog')->insert((new Apilog)->getSource(), array_values($data), array_keys($data));
     }
