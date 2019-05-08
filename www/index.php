@@ -3,8 +3,8 @@ error_reporting(E_ALL);
 
 header('Access-Control-Max-Age: 3600');
 header('Access-Control-Allow-Origin: *');
-$headers = 'Content-Type,TOKEN-ACCESS';
-header("Access-Control-Allow-Headers: {$headers}");
+$hset = 'Content-Type,TOKEN-ACCESS';
+header("Access-Control-Allow-Headers: {$hset}");
 
 if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'])) {
 
